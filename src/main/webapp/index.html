@@ -1,0 +1,179 @@
+<!DOCTYPE HTML><html>
+<head>
+<title>Home page</title>
+<link rel="stylesheet" href="style.css">
+<!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css" integrity="sha512-T584yQ/tdRR5QwOpfvDfVQUidzfgc2339Lc8uBDtcp/wYu80d7jwBgAxbyMh0a9YM9F8N3tdErpFI8iaGx6x5g==" crossorigin="anonymous" referrerpolicy="no-referrer">
+<!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/js/bootstrap.min.js" integrity="sha512-UR25UO94eTnCVwjbXozyeVd6ZqpaAE9naiEUBK/A+QDbfSTQFhPGj5lOR6d8tsgbBk84Ggb5A3EkjsOgPRPcKA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js" crossorigin="anonymous">
+
+<!-- Load font awesome icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+</head>
+
+<body>
+<section id="nav-bar">
+	<nav class="navbar navbar-expand-lg navbar-light">
+	    <a class="navbar-brand" href="#"><img src="resources/rainbowlog-whitebg-modified.png"></a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+	    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+	     aria-label="Toggle navigation">
+	     <i class="fa fa-bars"></i>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarNav">
+	      <ul class="navbar-nav ml-auto">
+	      <li class="nav-item">
+	          <a class="nav-link" href="#top">HOME</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="#about-us">FEATURES</a>
+	        </li>
+	      	<li class="nav-item">
+	          <a class="nav-link" href="getcrimes">CRIME INFO</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="login">LOGIN / REGISTER</a>
+	        </li>
+	
+	      </ul>
+	    </div>
+	</nav>
+</section>
+<!--------main banner------->
+<section id="main-banner">
+	<div class="container">
+	<div class="row text-center">
+	<div class="col-md-6">
+	<p class="banner-title"> WELCOME TO PLEASANT PEDAL </p>
+	<p class="banner-subtext"> An app for Seattle-based cyclists, from beginners to experts, to find the optimal times to ride on trails 
+	based on expected bike and pedestrian traffic! </p>
+	</div>
+	<div class="col-md-6">
+	<img src="resources/trail-homepage.jpeg" class="img-fluid float-right">
+	</div>
+	</div>
+	</div>
+	<img src="resources/wave1.png" class="wave-img">
+</section>
+
+<!--------About Us Section------->
+<section id="about-us">
+	<div class="container text-center">
+	<h1 class="about-us-title">FEATURES</h1>
+	<div class="row text-center">
+		<div class="col-md-6 aboutus">
+		<img src="resources/trailtraffic.jpg" class="aboutus-img">
+		<h4>Trail Traffic</h4>
+		<p>Provides you with information about any trail in the selected neighborhoods of Seattle and also gives you insights on
+		traffic on given trail at a given time based on the previous data.</p>
+		</div>
+		<div class="col-md-6 aboutus">
+		<img src="resources/user-profile.png" class="aboutus-img">
+		<h4>Build User Profile</h4>
+		<p>As a user, you can register and create a profile so that you can log in</p>
+		</div>
+	</div>
+	<div class="row text-center">
+		<div class="col-md-6 aboutus">
+		<img src="resources/review.jpeg" class="aboutus-img">
+		<h4>Review</h4>
+		<p>Once you are logged in, you can review all the trails you have visited that would be displayed on your profile page</p>
+		</div>
+		<div class="col-md-6 aboutus">
+		<img src="resources/theft.jpg" class="aboutus-img">
+		<h4>Crime Information</h4>
+		<p>Provides you with information on nature & frequency of the crimes committed in the neighborhood of the selected trail</p>
+		</div>
+	</div>
+	</div>
+</section>
+<!--------Crime Search Section------->
+<!-- <section id="crime-section">
+	<div class="container text-center">
+	<h1 class="crime-title">CRIME INFORMATION</h1>
+		<div class="row text-center">
+			<div class="col-md-6 crime-search-title">
+				<h4>Search by Neighborhood</h4>
+				<p>Explanation on what this search would be yield</p>
+			</div>
+			<div class="col-md-6 crime-search-title">
+				<h4>Search by Trail Name</h4>
+				<p>Explanation on what this search would be yield</p>
+			</div>
+		</div>
+	</div>
+</section> 
+<section id="crime" style="background: #f8f9fa;">
+	<div class="container text-center">
+	<h1 class="about-us-title">CRIME INFORMATION</h1>
+	<div class="row text-center">
+		<div class="col-md-6 aboutus">
+			<img src="resources/searchbyneighborhood.png" class="aboutus-img">
+			<h4>Search By Neighborhood</h4>
+			<p>Explain what this search result would be and how it's relevant</p>
+			<div class="row">
+				<div class="col-md-3"></div>
+	             <div class="col-md-6">
+	                 <select name="select_box" class="form-select" id="select_box">
+	                     <option value="">Select Neighborhood</option>
+	                     <?php 
+	                     foreach($result as $row)
+                        {
+                            echo '<option value="'.$row["country_name"].'">'.$row["country_name"].'</option>';
+                        }
+                        ?>  
+	                 </select>
+	             </div>
+	        </div>      
+		</div>
+		<div class="col-md-6 aboutus">
+		<img src="resources/searchbytrail.png" class="aboutus-img">
+		<h4>Search by Trail Name</h4>
+		<p>Explain what this search result would be and how it's relevant</p>
+		<div class="row">
+			<div class="col-md-3"></div>
+	             <div class="col-md-6">
+	                 <select name="select_box" class="form-select" id="select_box">
+	                     <option value="">Select TrailName</option>
+	                     <?php 
+	                     foreach($result as $row)
+                        {
+                            echo '<option value="'.$row["country_name"].'">'.$row["country_name"].'</option>';
+                        }
+                        ?>  
+	                 </select>
+	             </div>
+	        </div>  
+		</div>
+	</div>
+	</div>
+</section> -->
+
+<!--------Footer Section------->
+<section id="footer">
+	<img src="resources/wave2.png" class="footerwave-img">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-sm-6 footer-box">
+			<img src="resources/rainbowlog-whitebg-modified.png">
+			<p> App concept & webpages developed by GROUP 4 for Database Management Systems course (CS5200 Summer 2022)</p>
+			</div>
+			<div class="col-sm-6 footer-box">
+			<p><b>MEMBERS INCLUDE</b></p>
+			<P> Srishti Hegde, Marcela Vijil, Allison Ying, Arjun Patel & Sheetal Turaga</P>
+			</div>
+			
+		</div>
+	</div>
+</section>
+
+<!--------Smooth scroll------->
+<script src="smooth-scroll.js"></script>
+<script> var scroll = new SmoothScroll('a[href*="#"]');</script>
+
+
+</body>
+</html>
